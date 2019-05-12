@@ -3,7 +3,7 @@
 //     { id: 'main-title', title: 'This is the title.'},
 //     'My first React Element!'
 // );
-const title = <h1>My first React Element!</h1>;
+const title = 'My first React Element!';
 
 
 // const desc = React.createElement(
@@ -11,14 +11,23 @@ const title = <h1>My first React Element!</h1>;
 //     null,
 //     'I just leared how to create a react node and reder it into the DOM!'
 // );
-const desc = <p>I just leared how to create a react node and reder it into the DOM.</p>;
+const desc = 'I just leared how to create a react node and reder it into the DOM.';
 
-const header = React.createElement(
-    'header',
-    null,
-    title,
-    desc,
+const myTitleID = 'main-title';
+const name = 'Santi';
+// const header = React.createElement(
+//     'header',
+//     null,
+//     title,
+//     desc,
+// );
+const header = (
+    <header>
+        <h1 id={myTitleID}>{name}'s first Reactl Element!</h1>
+        <p className="main-desc">{desc}</p>
+    </header>
 );
+
 
 ReactDOM.render(
     header,
