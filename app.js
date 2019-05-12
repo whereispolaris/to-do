@@ -30,8 +30,19 @@ const Counter = () => {
     );
 }
 
+//Scoreboard will be changed to Taskboard
+const App = () => {
+    return (
+        <div className="scoreboard">
+            <Header />
+            {/* Player/Task list */}
+            <Player />
+        </div>
+    );
+}
+
 ReactDOM.render(
-    <Player />,
+    <App />,
 
     document.getElementById('root')
 );
