@@ -1,4 +1,5 @@
-function Header() {
+// Converted Header function declaration into arrow function expression
+const Header = ()=> {
     return (
         <header>
             <h1>To Do</h1>
