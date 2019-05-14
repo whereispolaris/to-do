@@ -1,3 +1,22 @@
+const players = [
+    {
+        name: "Santi",
+        score: 50
+      },
+      {
+        name: "Shawna",
+        score: 85
+      },
+      {
+        name: "Ashley",
+        score: 95
+      },
+      {
+        name: "James",
+        score: 80
+      }
+];
+
 // Converted Header function declaration into arrow function expression
 const Header = (props)=> {
     return (
@@ -31,21 +50,24 @@ const Counter = (props) => {
 }
 
 //Scoreboard will be changed to Taskboard
-const App = () => {
+const App = (props) => {
     return (
         <div className="scoreboard">
-            <Header title="Scoreboard" totalPlayers={1} />
+            <Header title="Scoreboard" totalPlayers={props.initialPlayers.length} />
             {/* Player/Task list */}
-            <Player playerName="Santi" playerScore={33}/>
-            <Player playerName="Shawna" playerScore={3}/>
-            <Player playerName="Ana" playerScore={333}/>
-            <Player playerName="Julieta" playerScore={33}/>
+            {props.initialPlayers.map( player =>
+                <Player 
+                    playerName={player.name}
+                    playerScore={player.score}
+                />
+
+            )}
         </div>
     );
 }
 
 ReactDOM.render(
-    <App />,
+    <App initialPlayers={players}/>,
 
     document.getElementById('root')
 );
